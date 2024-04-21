@@ -1,16 +1,14 @@
-import { useState } from 'react';
 
-function Options({ handleFeedback }) {
-  const handleClick = (feedbackType) => {
-    handleFeedback(feedbackType);
-  };
+
+function Options({ handleFeedback , resetFeedbackCount,isVisible}) {
+
 
   return (
     <>
-      <button onClick={() => handleClick('good')}>Good</button>
-      <button onClick={() => handleClick('neutral')}>Neutral</button>
-      <button onClick={() => handleClick('bad')}>Bad</button>
-      <button onClick={() => handleClick('reset')}>Reset</button>
+      <button onClick={() => handleFeedback('good')}>Good</button>
+      <button onClick={() => handleFeedback('neutral')}>Neutral</button>
+      <button onClick={() => handleFeedback('bad')}>Bad</button>
+      {isVisible &&(<button onClick={resetFeedbackCount}>Reset</button>)}
     </>
   );
 }

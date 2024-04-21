@@ -1,7 +1,5 @@
 
-function Feedback({ feedbackCounts }) {
-  const totalFeedback = feedbackCounts.good + feedbackCounts.neutral + feedbackCounts.bad;
-  const positivePercentage = totalFeedback === 0 ? 0 : (feedbackCounts.good / totalFeedback) * 100;
+function Feedback({ feedbackCounts,totalFeedback,positivePercentage }) {
 
   return (
     <>
@@ -9,7 +7,7 @@ function Feedback({ feedbackCounts }) {
       <div>Neutral: {feedbackCounts.neutral}</div>
       <div>Bad: {feedbackCounts.bad}</div>
       <div>Total: {totalFeedback}</div>
-      <div>Positive: {positivePercentage.toFixed(2)}%</div>
+      <div>Positive: {positivePercentage}%</div>
     </>
   );
 }
